@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Granivo - Premium Red Rice</title>
+  <style>
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #f0f7f2;
+      color: #2d4a3e;
+      line-height: 1.7;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+    ul { list-style: none; }
+
+    /* Navigation */
+    nav {
+      background: #1e7350;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .logo {
+      color: white;
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+    .nav-links a {
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: #ff6b6b; }
+    .cta-btn {
+      background: #c4433e;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-weight: 700;
+      transition: background 0.3s;
+    }
+    .cta-btn:hover { background: #a32e2a; }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #1e7350 0%, #2d8a5e 100%);
+      color: white;
+      padding: 80px 30px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      opacity: 0.95;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+    .btn-white {
+      background: white;
+      color: #1e7350;
+      padding: 12px 35px;
+      border-radius: 30px;
+      font-weight: 700;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 12px 35px;
+      border-radius: 30px;
+      font-weight: 700;
+    }
+
+    /* Section Styles */
+    section {
+      padding: 70px 30px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #1e7350;
+      margin-bottom: 50px;
+      font-weight: 700;
+    }
+
+    /* Benefits Section - 6 Key Benefits */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .benefit-card {
+      background: white;
+      border-radius: 15px;
+      padding: 35px 25px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .benefit-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    }
+    .benefit-icon {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+    }
+    .benefit-card h3 {
+      color: #1e7350;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    .benefit-card p {
+      color: #5a6b5e;
+      font-weight: 500;
+    }
+
+    /* Product Section */
+    .product-showcase {
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .product-images {
+      flex: 1 1 400px;
+      text-align: center;
+    }
+    .product-images img {
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      margin-bottom: 20px;
+    }
+    .product-info {
+      flex: 1 1 400px;
+    }
+    .product-info h2 {
+      font-size: 2.2rem;
+      color: #1e7350;
+      margin-bottom: 20px;
+    }
+    .product-info p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      color: #4a5a52;
+    }
+    .price-tag {
+      font-size: 2rem;
+      color: #c4433e;
+      font-weight: 800;
+      margin: 20px 0;
+    }
+    .btn-order {
+      background: #1e7350;
+      color: white;
+      padding: 15px 45px;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn-order:hover { background: #145532; }
+
+    /* Contact Section */
+    .contact-section {
+      background: #e8f0ea;
+      border-radius: 20px;
+      text-align: center;
+      padding: 60px 30px;
+    }
+    .contact-grid {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .contact-card {
+      background: white;
+      padding: 25px 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+    .contact-card h3 {
+      color: #1e7350;
+      margin-bottom: 10px;
+    }
+    .whatsapp-btn {
+      background: #25d366;
+      color: white;
+      padding: 15px 40px;
+      border-radius: 30px;
+      font-weight: 700;
+      display: inline-block;
+      margin-top: 20px;
+      transition: transform 0.3s;
+    }
+    .whatsapp-btn:hover { transform: scale(1.05); }
+
+    /* Footer */
+    footer {
+      background: #1e7350;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      margin-top: 50px;
+    }
+
+    /* Mobile Responsive */
+    @media(max-width: 768px) {
+      .nav-links { display: none; }
+      .hero h1 { font-size: 2rem; }
+      .product-showcase { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Granivo</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#product">Product</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="cta-btn">Order Now</a>
+  </nav>
+
+  <!-- Home / Hero Section -->
+  <section id="home" class="hero">
+    <h1>Premium Khichdi Special Red Rice</h1>
+    <p>100% Natural | Rich in Fiber | Supports Healthy Lifestyle</p>
+    <div class="hero-buttons">
+      <a href="#product" class="btn-white">Buy Now</a>
+      <a href="#benefits" class="btn-outline">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Benefits Section - 6 Key Benefits -->
+  <section id="benefits">
+    <h2 class="section-title">6 Amazing Benefits of Red Rice</h2>
+    <div class="benefits-grid">
+      <!-- Benefit 1 -->
+      <div class="benefit-card">
+        <div class="benefit-icon">❤️</div>
+        <h3>Controls Diabetes</h3>
+        <p>Red rice has a low glycemic index that helps regulate blood sugar levels naturally.</p>
+      </div>
+      <!-- Benefit 2 -->
+      <div class="benefit-card">
+        <div class="benefit-icon">⚖️</div>
+        <h3>Aids Weight Loss</h3>
+        <p>High fiber content keeps you full longer and supports healthy weight management.</p>
+      </div>
+      <!-- Benefit 3 -->
+      <div class="benefit-card">
+        <div class="benefit-icon">🫀</div>
+        <h3>Strengthens Heart</h3>
+        <p>Rich in antioxidants and nutrients that support cardiovascular health.</p>
+      </div>
+      <!-- Benefit 4 -->
+      <div class="benefit-card">
+        <div class="benefit-icon">💪</div>
+        <h3>Improves Digestion</h3>
+        <p>Excellent source of dietary fiber that promotes healthy digestion and gut health.</p>
+      </div>
+      <!-- Benefit 5 -->
+      <div class="benefit-card">
+        <div class="benefit-icon">🧠</div>
+        <h3>Boosts Energy</h3>
+        <p>Provides sustained energy release due to complex carbohydrates and nutrients.</p>
+      </div>
+      <!-- Benefit 6 -->
+      <div class="benefit-card">
+        <div class="benefit-icon">🌿</div>
+        <h3>100% Natural & Safe</h3>
+        <p>Organically sourced, hygienically packed with no harmful chemicals or preservatives.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Section -->
+  <section id="product">
+    <h2 class="section-title">Our Product</h2>
+    <div class="product-showcase">
+      <div class="product-images">
+        <img src="https://i.ibb.co/KzvLVxH/red-rice-front.png" alt="Granivo Red Rice Front" />
+        <img src="https://i.ibb.co/wyMFYyy/red-rice-back.png" alt="Granivo Red Rice Back" />
+      </div>
+      <div class="product-info">
+        <h2>Granivo Premium Khichdi Special Red Rice</h2>
+        <p>Premium quality red rice specially selected for making delicious and nutritious khichdi. Each grain is carefully cleaned and hygienically packed to maintain purity.</p>
+        <p><strong>Net Weight:</strong> 500 gm</p>
+        <p><strong>Best For:</strong> Traditional Khichdi, Pulao, Fried Rice, and healthy meals</p>
+        <div class="price-tag">₹250</div>
+        <button class="btn-order" onclick="window.location.href='#contact'">Order Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="contact-section">
+      <h2 class="section-title">Order Now</h2>
+      <p style="font-size: 1.2rem; color: #4a5a52;">Contact us for orders and bulk inquiries</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>📞 Phone</h3>
+          <p>+91 94995 92966</p>
+        </div>
+        <div class="contact-card">
+          <h3>📞 Phone</h3>
+          <p>+91 90549 70440</p>
+        </div>
+      </div>
+      <a href="https://wa.me/919499592966?text=Hello,%20I%20want%20to%20order%20Granivo%20Red%20Rice" class="whatsapp-btn">Order via WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Granivo - Grow Healthy, Live Better 🌿</p>
+  </footer>
+
+  <script>
+    // Smooth scroll for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
